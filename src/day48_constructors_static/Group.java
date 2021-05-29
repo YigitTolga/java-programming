@@ -4,26 +4,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Group {
-    private String groupName;
-    private List<String> members = new ArrayList<>();
-    public Group (String groupName){
-        this.groupName =groupName;
+    private String name;
+    private List<String> members;
+
+    //constructor that accepts a name
+    public Group(String name) {
+        this.name = name;
+        members = new ArrayList<>();
+    }
+
+    public void addMember(String newMember) {
+        members.add(newMember);
+    }
+
+    public void removeMember(String memberName) {
+        members.remove(memberName);
     }
 
     @Override
     public String toString() {
         return "Group{" +
-                "groupName='" + groupName + '\'' +
+                "name='" + name + '\'' +
                 ", members=" + members +
                 '}';
     }
 
-    public String getGroupName() {
-        return groupName;
+    public String getName() {
+        return name;
     }
 
-    public void setGroupName(String groupName) {
-        this.groupName = groupName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public List<String> getMembers() {
@@ -32,11 +43,5 @@ public class Group {
 
     public void setMembers(List<String> members) {
         this.members = members;
-    }
-    public void addMember(String newMember){
-        members.add(newMember);
-    }
-    public void removeMember(String memberName){
-        members.remove(memberName);
     }
 }
