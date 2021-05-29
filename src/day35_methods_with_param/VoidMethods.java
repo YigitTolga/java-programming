@@ -2,20 +2,16 @@ package day35_methods_with_param;
 
 public class VoidMethods {
     public static void main(String[] args) {
-        printAtoZ();
-        printAtoZ();
+        printAtoZ("asd");
+        
 
-        for (int i = 0; i < 10; i++) {
-            printAtoZ();
-        }
-        displayUSFlag();
-        displayUSFlag();
+
     }
     /**
      * method name: printAtoZ
      * desc: prints English alphabet in all uppercase
      */
-    public static void printAtoZ() {
+    public static void printAtoZ(String s) {
         for(char i = 'A'; i <= 'Z'; i++) {
             System.out.print(i +" ");
         }
