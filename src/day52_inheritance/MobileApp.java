@@ -25,10 +25,7 @@ public class MobileApp {
         return true;
     }
 
-    protected boolean download(){
-        System.out.println("App: " + name + " version: " + version + " is downloaded.");
-        return true;
-    }
+
 
     public void useTheApp(int minutes) {
         System.out.println("Using " + name + " app for " + minutes + " minutes");

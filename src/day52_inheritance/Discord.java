@@ -14,11 +14,7 @@ public class Discord extends MobileApp {
         return true;
     }
 
-    @Override
-    public boolean download(){
-        System.out.println("Downloaded Discord " + version);
-        return true;
-    }
+
 
     @Override
     public void useTheApp(int minutes) {
