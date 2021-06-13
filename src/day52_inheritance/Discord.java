@@ -5,6 +5,15 @@ public class Discord extends MobileApp {
         System.out.println("Chatting with " + someone +" on Discord");
     }
 
+    /**
+     * override download method
+     */
+    @Override
+    public boolean download() {
+        System.out.println("Downloaded Discord 0.0.23 from App Store");
+        return true;
+    }
+
     @Override
     public boolean download(){
         System.out.println("Downloaded Discord " + version);
@@ -16,4 +25,10 @@ public class Discord extends MobileApp {
         super.useTheApp(minutes);
         chat("Vladislav");
     }
+
+    public void printInfo() {
+        System.out.println("App Name = " + getName());
+        System.out.println("App Version = " + getVersion());
+    }
+
 }
