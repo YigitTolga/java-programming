@@ -1,5 +1,7 @@
 package day53_inheritance.hiding;
 
+import java.util.Scanner;
+
 public class Parent {
     public String name = "parent > Mike Smith";
     public void introduce1() {
@@ -21,5 +23,6 @@ class Runner {
         Child child = new Child();
         child.introduce1();
         child.introduce2();
+        Scanner scan;
     }
 }
