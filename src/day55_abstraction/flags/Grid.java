@@ -1,4 +1,5 @@
 package day55_abstraction.flags;
+
 import javax.swing.*;
 import java.awt.*;
 

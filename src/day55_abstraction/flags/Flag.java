@@ -1,5 +1,5 @@
 package day55_abstraction.flags;
 
-public class Flag {
-
+public abstract class Flag {
+    public abstract void draw();
 }
