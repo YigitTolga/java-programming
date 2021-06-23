@@ -1,4 +1,6 @@
-package day56_abstraction;
+package day56_abstraction.driveable;
+
+import day56_abstraction.greeting.Greeting;
 
 public class Tesla extends Transportation implements SelfDrivable, Greeting {
 
