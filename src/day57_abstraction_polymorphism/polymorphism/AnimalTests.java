@@ -9,7 +9,7 @@ public class AnimalTests {
         a1.makeNoise();
         //Polymorphism - polymorphic way:
         //parent type =  new child type
-        Dog animal1 = new Dog();
+        Animal animal1 = new Dog();
         Animal animal2 = new Horse();
         Animal cat = new Cat();
         //List list = new ArrayList();
