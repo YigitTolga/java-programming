@@ -1,10 +1,16 @@
 package day57_abstraction_polymorphism.abstract_class_vs_interface;
 
 public interface InterfaceA {
-
+    //constants
     public static final String TYPE = "interface";
     double MAX_COUNT = 500; //this is also public static final
 
+    /**
+     * ERROR: Interfaces CANNOT have constructors
+    public InterfaceA() {
+        System.out.println("constructor is not welcome in Interface");
+    }
+    */
     public abstract void absMethodD(int num);
 
     /**
