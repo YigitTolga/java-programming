@@ -46,6 +46,20 @@ public class Facebook extends SocialMedia {
     public Facebook(String username, String password){
         this.username = username;
         setPassword(password);
+        personUrl = "facebook.com/" + username;
+        allPosts = new ArrayList<>();
+    }
+
+    // this() -> constructor chaining
+    public Facebook(String username, String password, String fullName){
+        this(username, password);
+        setFullName(fullName);
+    }
+
+    public Facebook(String username, String password, String fullName, int age, int numberOfFriends){
+        this(username, password, fullName);
+        setAge(age);
+        setNumberOfFriends(numberOfFriends);
     }
 
     @Override
@@ -89,7 +103,23 @@ public class Facebook extends SocialMedia {
     }
 
     public void setFullName(String fullName) {
-        this.fullName = fullName;
+
+        boolean validName = true;
+
+        for(int i = 0; i < fullName.length(); i++){
+            if(!Character.isLetter(fullName.charAt(i))){
+                validName = false;
+                break;
+            }
+        }
+
+        if(validName){
+            this.fullName = fullName;
+        } else{
+            System.out.println("Invalid name");
+            this.fullName = "no name";
+        }
+
     }
 
     public int getAge() {
@@ -97,7 +127,11 @@ public class Facebook extends SocialMedia {
     }
 
     public void setAge(int age) {
-        this.age = age;
+        if(age > 0){
+            this.age = age;
+        } else {
+            System.out.println("Invalid age");
+        }
     }
 
     public int getNumberOfFriends() {
@@ -105,7 +139,11 @@ public class Facebook extends SocialMedia {
     }
 
     public void setNumberOfFriends(int numberOfFriends) {
-        this.numberOfFriends = numberOfFriends;
+        if(this.numberOfFriends < 5000){
+            this.numberOfFriends = numberOfFriends;
+        } else {
+            System.out.println("Invalid number of friends");
+        }
     }
 
     public ArrayList<Post> getAllPosts() {
