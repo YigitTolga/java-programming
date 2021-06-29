@@ -31,7 +31,7 @@ Note: use this code to get the current hour: LocalTime.now().getHour() - The ret
 - If both the user and you are under the limit print “Friend request sent to $theUsersName” and increase your number of friends by one.
 
  */
-public class FacebookUser extends SocialMedia {
+public class FacebookUser extends SocialMedia implements Groups {
 
     private String username;
     private String password;
@@ -39,6 +39,7 @@ public class FacebookUser extends SocialMedia {
     private int age;
     private int numberOfFriends;
     private ArrayList<Post> allPosts;
+    private int numberOfGroups;
 
     static {
         platform = "Facebook";
@@ -81,6 +82,20 @@ public class FacebookUser extends SocialMedia {
         } else {
             System.out.println("Sleep mode");
         }
+    }
+
+    @Override
+    public void joinGroup(String groupName) {
+        System.out.println(getUsername() + " has joined " + groupName);
+        setNumberOfGroups(getNumberOfGroups() + 1);
+        //numberOfGroups++;
+    }
+
+    @Override
+    public void leaveGroup(String groupName) {
+        System.out.println(getUsername() + " has left " + groupName);
+        setNumberOfGroups(getNumberOfGroups() - 1);
+       // numberOfGroups--;
     }
 
     public boolean sendFriendRequest(FacebookUser other){
@@ -151,6 +166,14 @@ public class FacebookUser extends SocialMedia {
             this.fullName = "no name";
         }
 
+    }
+
+    public int getNumberOfGroups() {
+        return numberOfGroups;
+    }
+
+    public void setNumberOfGroups(int numberOfGroups) {
+        this.numberOfGroups = numberOfGroups;
     }
 
     public int getAge() {
