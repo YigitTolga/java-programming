@@ -1,5 +1,6 @@
 package OfficeHours.Practice_06_28_2021;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 /*
@@ -30,7 +31,7 @@ Note: use this code to get the current hour: LocalTime.now().getHour() - The ret
 - If both the user and you are under the limit print “Friend request sent to $theUsersName” and increase your number of friends by one.
 
  */
-public class Facebook extends SocialMedia {
+public class FacebookUser extends SocialMedia {
 
     private String username;
     private String password;
@@ -43,7 +44,7 @@ public class Facebook extends SocialMedia {
         platform = "Facebook";
     }
 
-    public Facebook(String username, String password){
+    public FacebookUser(String username, String password){
         this.username = username;
         setPassword(password);
         personUrl = "facebook.com/" + username;
@@ -51,12 +52,12 @@ public class Facebook extends SocialMedia {
     }
 
     // this() -> constructor chaining
-    public Facebook(String username, String password, String fullName){
+    public FacebookUser(String username, String password, String fullName){
         this(username, password);
         setFullName(fullName);
     }
 
-    public Facebook(String username, String password, String fullName, int age, int numberOfFriends){
+    public FacebookUser(String username, String password, String fullName, int age, int numberOfFriends){
         this(username, password, fullName);
         setAge(age);
         setNumberOfFriends(numberOfFriends);
@@ -64,18 +65,45 @@ public class Facebook extends SocialMedia {
 
     @Override
     public void directMessage(String username, String message) {
-
+        System.out.println(message + " was sent to " + username);
     }
 
     @Override
     public void post(String body) {
-
+        allPosts.add(new Post(body));
     }
 
     @Override
     public void notification() {
+        int currentHour = LocalTime.now().getHour();
+        if(currentHour >= 8 && currentHour <= 17 ) {
+            System.out.println("Notification");
+        } else {
+            System.out.println("Sleep mode");
+        }
+    }
+
+    public boolean sendFriendRequest(FacebookUser other){
+
+        boolean sent = false;
+
+        if(this.getNumberOfFriends() < 5000 && other.getNumberOfFriends() < 5000){
+            System.out.println("Friend request sent to " + other.getUsername());
+            sent = true;
+            this.setNumberOfFriends(this.getNumberOfFriends() + 1);
+            other.setNumberOfFriends(other.getNumberOfFriends() + 1);
+        } else if(this.getNumberOfFriends() == 5000){
+            System.out.println("You have reached the max friend limit");
+        } else {
+            System.out.println(other.getUsername() + " cannot accept anymore friends");
+        }
+
+        return sent;
 
     }
+
+    // Facebook user -> 4001
+    // other user -> 301
 
     public String getUsername() {
         return username;
@@ -107,6 +135,9 @@ public class Facebook extends SocialMedia {
         boolean validName = true;
 
         for(int i = 0; i < fullName.length(); i++){
+
+            if(fullName.charAt(i) == ' ') continue;
+
             if(!Character.isLetter(fullName.charAt(i))){
                 validName = false;
                 break;
@@ -152,5 +183,17 @@ public class Facebook extends SocialMedia {
 
     public void setAllPosts(ArrayList<Post> allPosts) {
         this.allPosts = allPosts;
+    }
+
+    @Override
+    public String toString() {
+        return "Facebook{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", age=" + age +
+                ", numberOfFriends=" + numberOfFriends +
+                ", allPosts=" + allPosts +
+                '}';
     }
 }

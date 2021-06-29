@@ -33,7 +33,15 @@ public class Post {
         this.body = body;
     }
 
-//    public String getDATE_TIME() {
-//        return DATE_TIME;
-//    }
+    public String getDATE_TIME() {
+        return DATE_TIME;
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "body='" + body + '\'' +
+                ", DATE_TIME='" + DATE_TIME + '\'' +
+                '}';
+    }
 }
