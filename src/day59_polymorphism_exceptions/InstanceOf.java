@@ -25,6 +25,7 @@ public class InstanceOf {
         if (shape.getClass().getSimpleName().equals("Square")) {
             System.out.println("It is a square object");
         }
+
         System.out.println(shape.getClass().getDeclaredMethods().length);
 
         WebElement el = new Link();
