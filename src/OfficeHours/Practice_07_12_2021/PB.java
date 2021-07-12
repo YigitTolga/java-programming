@@ -6,4 +6,5 @@ public class PB extends PA{
     public void go() {
         System.out.println("PB GO");
     }
+
 }

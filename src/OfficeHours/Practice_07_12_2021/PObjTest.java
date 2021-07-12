@@ -20,7 +20,7 @@ public class PObjTest {
         PB obj4 = new PB(); // if it was new PB() -> PB GO
         obj4.go();
         ((PA)obj4).go();
-        ((PI)obj4).math();
+        //((PI)obj4).math(); // PB doesn't have math method
 
     }
 }
