@@ -1,10 +1,11 @@
 package day13_conditional_statements;
-
+import java.util.Scanner;
 public class ATMPincodeProgram {
     public static void main(String[] args) {
+        Scanner scan =  new Scanner(System.in);
         System.out.println("****** WELCOME TO TD BANK ATM ******");
-        int secretPincode = 2233;
-        int inputPincode = 2233;
+        int secretPincode = scan.nextInt();
+        int inputPincode = scan.nextInt();
 
         if (secretPincode == inputPincode) {
             System.out.println("Welcome to your account!");

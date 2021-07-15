@@ -1,6 +1,7 @@
 package day62_collections;
 
-import java.util.*;
+import java.util.List;
+import java.util.Vector;
 
 public class VectorDemo {
     public static void main(String[] args) {
@@ -14,9 +15,5 @@ public class VectorDemo {
         states.add("CO");
         states.add("MD");
         states.add("MD");
-
-        System.out.println(states);
-        //VECTOR is synchronized
-
     }
 }

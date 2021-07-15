@@ -14,6 +14,8 @@ public class Discord extends MobileApp {
         return true;
     }
 
+
+
     @Override
     public void useTheApp(int minutes) {
         super.useTheApp(minutes);

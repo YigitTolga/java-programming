@@ -20,10 +20,12 @@ public class MobileApp {
         this.version = version;
     }
 
-    protected boolean download() {
+    public boolean download() {
         System.out.println("App: " + name +" version: " + version +" is downloaded");
         return true;
     }
+
+
 
     public void useTheApp(int minutes) {
         System.out.println("Using " + name + " app for " + minutes + " minutes");

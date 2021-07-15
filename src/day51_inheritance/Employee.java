@@ -1,6 +1,6 @@
 package day51_inheritance;
 
-public class Employee extends Object{
+public class Employee {
     String jobTitle;
 
     public double calculateSalary(double hourlyRate) {

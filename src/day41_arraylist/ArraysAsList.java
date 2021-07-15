@@ -5,8 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ArraysAsList {
+
     public static void main(String[] args) {
-        List<Integer> nums = Arrays.asList( 23, 1 ,34 , 54, 654);
+
+        List<Integer> nums = (List<Integer>) Arrays.asList( 23, 1 ,34 , 54, 654);
         System.out.println("nums = " + nums);
         //nums.add(100); UnsupportedOperationException
         //nums.remove(0);UnsupportedOperationException

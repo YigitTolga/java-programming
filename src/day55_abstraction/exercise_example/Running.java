@@ -16,4 +16,6 @@ public class Running extends Exercise {
     public int getCaloriesCount(int minutes) {
         return minutes * 13;
     }
+
+
 }
