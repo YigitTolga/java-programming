@@ -12,5 +12,7 @@ public class CompareChars {
         char grade = 'A';
         boolean pass = grade <= 'D';
         System.out.println("Did you pass the exam? - " + pass);
+
+
     }
 }

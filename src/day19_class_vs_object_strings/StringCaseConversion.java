@@ -4,6 +4,8 @@ public class StringCaseConversion {
     public static void main(String[] args) {
         String word = "CyberTek";
         String sentence = "123 Java IS Fun!";
+        System.out.println(word.length());
+
         System.out.println(word);
         //convert word to all lowercase
         System.out.println(word.toLowerCase());
